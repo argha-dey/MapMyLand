@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "779728753033",
+    "firebase_url": "https://facebookintegrate-6f5d7.firebaseio.com",
+    "project_id": "facebookintegrate-6f5d7",
+    "storage_bucket": "facebookintegrate-6f5d7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:779728753033:android:70ce3c532efb37e3",
+        "android_client_info": {
+          "package_name": "com.cyberswift.facebookintegrate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "779728753033-n7jvua8rsvtahard5sk43h1g0umlfi38.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cyberswift.facebookintegrate",
+            "certificate_hash": "23b8610065346c72a42f601642debdbe8d2e61cf"
+          }
+        },
+        {
+          "client_id": "779728753033-05ik64tq600bsu10e90gjsli076bsgdn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdQRrf3cFTlN89OPf_p9Mm86fMbb76XQc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "779728753033-05ik64tq600bsu10e90gjsli076bsgdn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

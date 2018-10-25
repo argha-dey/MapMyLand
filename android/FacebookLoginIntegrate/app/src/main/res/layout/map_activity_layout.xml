@@ -1,0 +1,90 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.SingleShapeMapActivity">
+
+    <LinearLayout
+        android:background="#c7c6c6"
+        android:id="@+id/ll_findPlace"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        <com.cyberswift.facebookintegrate.custom.CustomTextView
+            android:id="@+id/findPlace"
+            android:paddingRight="5dp"
+            android:paddingLeft="5dp"
+            android:hint="Click to search any location"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:maxLines="1"
+            android:onClick="findPlace"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/texttitle" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll_findPlace">
+
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/findPlace" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_polyLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="polyLine" />
+
+    <Button
+        android:id="@+id/btn_polySquare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_polyLine"
+        android:text="square" />
+    <Button
+        android:id="@+id/btn_circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_polySquare"
+        android:text="circle" />
+
+
+    <Button
+        android:id="@+id/btn_polygon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_circle"
+        android:text="polygon" />
+
+    <Button
+        android:id="@+id/btn_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_polygon"
+        android:text="clear" />
+
+    <Button
+        android:id="@+id/btn_add_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_clear"
+        android:text="Add Text" />
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_add_text"
+        android:text="SAVE" />
+</RelativeLayout>

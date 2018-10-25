@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="textheading">18sp</dimen>
+    <dimen name="texttitle">15sp</dimen>
+    <dimen name="textSubList">14sp</dimen>
+    <dimen name="textSubListChild">12sp</dimen>
+    <dimen name="textSubchild">13sp</dimen>
+    <dimen name="textSubList_margin_Top">15dp</dimen>
+    <dimen name="textSubListChild_margin_Top">1dp</dimen>
+    <dimen name="rl_child_marginBottom">10dp</dimen>
+    <dimen name="rl_child_first_marginTop">10dp</dimen>
+    <dimen name="rl_child_last_marginBottom">10dp</dimen>
+
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+
+    <!-- For all screen layouts -->
+
+    <dimen name="margin_ten">10dp</dimen>
+    <dimen name="padding_two">2dp</dimen>
+
+    <dimen name="dropdown_holder_height">45dp</dimen>
+
+
+    <dimen name="search_icon_width">30dp</dimen>
+    <dimen name="search_icon_height">30dp</dimen>
+
+
+    <!-- Test Project  -->
+  <dimen name="activity_vertical_margin">40dp</dimen>
+    <dimen name="activity_horizontal_margin">40dp</dimen>
+
+
+</resources>

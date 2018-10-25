@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+  >
+    <FrameLayout
+        android:padding="10dp"
+        android:id="@+id/FrameLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/fb_sign_in_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            />
+       <Button
+            android:id="@+id/custom_fb_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#416BC1"
+            android:onClick="onClick"
+            android:text="Login with facebook"
+            android:textColor="#ffffff"
+            android:textStyle="normal" />
+    </FrameLayout>
+
+
+
+
+
+    <FrameLayout
+        android:padding="10dp"
+        android:id="@+id/FrameLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/google_sign_in_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            />
+        <Button
+            android:id="@+id/custom_google_sign_in_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#e4394f"
+            android:onClick="onClick"
+            android:text="Sign in with google+"
+            android:textColor="#ffffff"
+            android:textStyle="normal" />
+    </FrameLayout>
+
+
+
+
+
+
+</LinearLayout>
