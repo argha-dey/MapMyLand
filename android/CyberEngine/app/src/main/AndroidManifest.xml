@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cyberswift.cyberengine">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:name=".application.AppController"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/MyMaterialTheme">
+
+        <activity android:name=".activities.SplashActivity"
+            android:theme="@style/MyMaterialTheme.FullScreen"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".activities.BaseActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
+
+        <service android:name=".services.AutoAttendanceService" />
+        <service android:name=".services.AttendanceAfterDayEndService" />
+        <service android:name=".services.AutoAttendanceOfflineDataSendService" />
+        <service android:name=".services.GetLocationService" />
+
+
+        <receiver android:name=".receivers.AttendanceAfterDayEndBroadcastReceiver" />
+        <receiver
+            android:name=".receivers.BootReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="2e172719a57f73ca61855a2bbd43a898ae6d5604" />
+
+    </application>
+
+</manifest>

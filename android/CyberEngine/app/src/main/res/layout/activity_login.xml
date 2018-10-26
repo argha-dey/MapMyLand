@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:paddingLeft="16dp"
+    android:paddingStart="16dp"
+    android:paddingRight="16dp"
+    android:paddingEnd="16dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:id="@+id/ll_app_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="72dp"
+                android:layout_marginBottom="64dp"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="32dp"
+                    android:textStyle="bold"
+                    android:text="@string/app_name_first_part"
+                    android:textAllCaps="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorSecondaryText"
+                    android:textSize="32dp"
+                    android:textStyle="bold"
+                    android:text="@string/app_name_second_part"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_logoLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="40dp"
+                android:layout_marginTop="60dp"
+                android:background="@drawable/login_logo"
+                android:visibility="gone"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_app_name"
+                android:layout_marginBottom="16dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout">
+
+                    <EditText
+                        android:theme="@style/LoginEditTextTheme"
+                        android:id="@+id/et_username"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:drawableLeft="@drawable/user_normal"
+                        android:drawableStart="@drawable/user_normal"
+                        android:drawablePadding="8dp"
+                        android:hint="Username"
+                        android:imeOptions="actionNext"
+                        android:singleLine="true"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@color/colorPrimaryText"
+                        android:textColorHint="@color/colorPrimaryText"
+                        android:textCursorDrawable="@drawable/cursor_color" />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_username"
+                android:layout_marginBottom="16dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout">
+
+                    <EditText
+                        android:theme="@style/LoginEditTextTheme"
+                        android:id="@+id/et_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:drawableLeft="@drawable/password_normal"
+                        android:drawableStart="@drawable/password_normal"
+                        android:drawablePadding="8dp"
+                        android:hint="Password"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPassword"
+                        android:singleLine="true"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@color/colorPrimaryText"
+                        android:textColorHint="@color/colorPrimaryText"
+                        android:textCursorDrawable="@drawable/cursor_color" />
+
+                </android.support.design.widget.TextInputLayout>
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/rl_password"
+                android:layout_margin="8dp"
+                android:background="@drawable/login_button"
+                android:elevation="6dp"
+                android:text="Login"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+
+            <RelativeLayout
+                android:id="@+id/rl_checkbox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_login"
+                android:layout_marginTop="16dp"
+                android:gravity="center">
+
+                <com.rey.material.widget.CheckBox
+                    android:id="@+id/checkbox_rememberMe"
+                    style="@style/Material.Drawable.CheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:drawablePadding="6dp"
+                    android:text="Remember Me"
+                    android:textColor="@color/colorPrimaryText"
+                    app:cbd_boxSize="16dp"
+                    app:cbd_height="20dp"
+                    app:cbd_width="20dp"
+                    app:cbd_strokeColor="@color/checkbox_color_list"
+                    app:cbd_strokeSize="1dp"
+                    app:cbd_tickColor="@color/colorPrimary" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/iv_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:src="@drawable/company"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
