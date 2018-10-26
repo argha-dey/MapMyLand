@@ -1,0 +1,37 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="MyMaterialTheme" parent="MyMaterialTheme.Base"/>
+
+    <style name="MyMaterialTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccentRed</item>
+    </style>
+
+    <style name="MyMaterialTheme.FullScreen" parent="MyMaterialTheme.Base">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="CustomDialog" parent="@android:style/Theme.Material.Light.Dialog.Alert" tools:ignore="NewApi">
+        <item name="android:colorAccent">@color/colorPrimary</item>
+    </style>
+
+    <style name="TextAppearance.App.TextInputLayout" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/colorPrimaryText</item>
+        <item name="android:textSize">11dp</item>
+    </style>
+
+    <style name="LoginEditTextTheme">
+        <item name="android:imeOptions">actionNext</item>
+        <item name="android:singleLine">true</item>
+        <item name="colorControlNormal">@color/colorSecondaryText</item>
+        <item name="colorControlActivated">@color/colorPrimary</item>
+        <item name="colorControlHighlight">@color/colorPrimary</item>
+        <item name="android:textColorPrimary">@color/colorPrimary</item>
+    </style>
+
+</resources>

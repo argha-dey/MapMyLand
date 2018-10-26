@@ -1,0 +1,53 @@
+<resources>
+
+    <string name="app_name">GLAMOROUS</string>
+    <string name="app_name_first_part">Cyber</string>
+    <string name="app_name_second_part">&#160;ENGINE</string>
+
+    <string name="no_internet">No network connection found! Please check your network connection.</string>
+    <string name="response_timeout">Please check your internet connection and try again.</string>
+    <string name="auth_failure">Server authentication failed! Please try again.</string>
+    <string name="server_error">Server isn\'t responding! Please try again.</string>
+    <string name="network_error">Network not found! Please check your internet connection and try again.</string>
+    <string name="parse_error">Unable to parse Data! Please try again.</string>
+
+    <string name="project_plan_details">PROJECT PLAN DETAILS</string>
+    <string name="project_manager">Project Manager</string>
+    <string name="scope_of_work">Scope of Work</string>
+    <string name="project_understanding">Project Understanding</string>
+    <string name="project_code">Project Code</string>
+    <string name="project_name">Project Name</string>
+    <string name="concern_area">CONCERN AREA</string>
+    <string name="concern">Concern</string>
+    <string name="how_to_resolve">How To Resolve?</string>
+    <string name="type_of_manpower">TYPE OF MAN POWER</string>
+    <string name="assigned_hours">ASSIGNED HOURS</string>
+    <string name="direct_cost">DIRECT COST</string>
+    <string name="task_milestone">TASK MILESTONES</string>
+    <string name="delivery_milestone">DELIVERY MILESTONES</string>
+    <string name="billing_milestone">BILLING MILESTONES</string>
+    <string name="communication_mode">MODE OF COMMUNICATION AND FREQUENCY</string>
+    <string name="internal_review">INTERNAL REVIEW AND FREQUENCY</string>
+    <string name="client_review">CLIENT REVIEW AND FREQUENCY</string>
+    <string name="client_side_person">CLIENT SIDE KEY PERSONS</string>
+
+    <string name="step1">Step:1 Have you completely read the order?</string>
+    <string name="step2">Step:2 Are the commercial matching?</string>
+    <string name="step3">Step:3 Are there any additional Terms &amp; Conditions?</string>
+    <string name="step4">Step:4 Are payments &amp; tax calculation correct?</string>
+    <string name="state_diff">State the difference</string>
+
+    <string name="billing_milestones_list">EXTEND PROJECT PLAN DETAILS </string>
+    <string name="direct_cost_list">DIRECT COST</string>
+    <string name="extended_project_list">EXTEND PROJECT ORDER DETAILS</string>
+
+    <string name="punchin">Check-in</string>
+    <string name="punchout">Check-out</string>
+
+    <string name="start">START</string>
+    <string name="stop">STOP</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

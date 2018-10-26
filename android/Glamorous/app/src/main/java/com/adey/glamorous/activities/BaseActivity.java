@@ -1,26 +1,15 @@
-package com.cyberswift.cyberengine.activities;
+package com.adey.glamorous.activities;
 
 
 import android.annotation.SuppressLint;
-import android.app.AlarmManager;
-import android.app.PendingIntent;
-import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.res.ColorStateList;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -30,48 +19,22 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.cyberswift.cyberengine.R;
-import com.cyberswift.cyberengine.database.CyberEngineDataBaseHelper;
-import com.cyberswift.cyberengine.fragments.AttendanceHistoryFragment;
-import com.cyberswift.cyberengine.fragments.BaseFragment;
-import com.cyberswift.cyberengine.fragments.HomeFragment;
-import com.cyberswift.cyberengine.fragments.POEntryListFragment;
-import com.cyberswift.cyberengine.listeners.AlertDialogCallBack;
-import com.cyberswift.cyberengine.listeners.CELocationCallback;
-import com.cyberswift.cyberengine.listeners.ServerResponseCallback;
-import com.cyberswift.cyberengine.receivers.AttendanceAfterDayEndBroadcastReceiver;
-import com.cyberswift.cyberengine.services.AutoAttendanceOfflineDataSendService;
-import com.cyberswift.cyberengine.services.AutoAttendanceService;
-import com.cyberswift.cyberengine.services.GetLocationService;
-import com.cyberswift.cyberengine.services.VolleyTaskManager;
-import com.cyberswift.cyberengine.utility.AppConstants;
-import com.cyberswift.cyberengine.utility.Constants;
-import com.cyberswift.cyberengine.utility.Prefs;
-import com.cyberswift.cyberengine.utility.Util;
-import com.cyberswift.cyberengine.utility.WebServiceConstants;
-import com.squareup.picasso.Callback;
-import com.squareup.picasso.Picasso;
-
-import org.json.JSONObject;
-
-import java.util.Calendar;
-import java.util.HashMap;
+import com.adey.glamorous.R;
+import com.adey.glamorous.utility.Constants;
 
 @SuppressLint("Registered")
 public class BaseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     /********** Util variables **********/
     private Context mContext;
-    private Prefs mPrefs;
-    private VolleyTaskManager volleyTaskManager;
-    private CyberEngineDataBaseHelper cyberEngineDataBaseHelper;
+  //  private Prefs mPrefs;
+  //  private VolleyTaskManager volleyTaskManager;
+ //   private CyberEngineDataBaseHelper cyberEngineDataBaseHelper;
     private static boolean activeActivity = false;
     private String latitude, longitude;
     /********** View variables **********/
@@ -93,10 +56,10 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         ActionBar actionbar = getSupportActionBar();
         actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setHomeAsUpIndicator(R.drawable.menu_nav_drawer);
-        actionbar.setElevation(Util.convertDpToPixel(6, this));
+    //    actionbar.setElevation(Util.convertDpToPixel(6, this));
 
         initView();
-        Util.checkAndRequestAllPermissions(mContext);
+   //     Util.checkAndRequestAllPermissions(mContext);
     }
 
 
@@ -116,18 +79,18 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
 
     private void initView() {
         mContext = BaseActivity.this;
-        mPrefs = new Prefs(mContext);
-        volleyTaskManager = new VolleyTaskManager(mContext);
+      //  mPrefs = new Prefs(mContext);
+      //  volleyTaskManager = new VolleyTaskManager(mContext);
         drawer_layout = findViewById(R.id.drawer_layout);
         frame_container = findViewById(R.id.frame_container);
         nav_view = findViewById(R.id.nav_view);
-        setNavHeaderData();
+   //     setNavHeaderData();
         addMenuItemsInNavDrawer();
         nav_view.setNavigationItemSelectedListener(this);
 
         // Database init...
-        cyberEngineDataBaseHelper = new CyberEngineDataBaseHelper(mContext);
-        cyberEngineDataBaseHelper.deleteAllAttendance(1);
+      //  cyberEngineDataBaseHelper = new CyberEngineDataBaseHelper(mContext);
+     //   cyberEngineDataBaseHelper.deleteAllAttendance(1);
     }
 
 
@@ -186,9 +149,9 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
                     checkedMenuItem = item;
                 }
 
-                Fragment newFragment = new HomeFragment(mContext);
-                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                ft.replace(R.id.frame_container, newFragment).commit();
+         //       Fragment newFragment = new HomeFragment(mContext);
+             //   FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+           //     ft.replace(R.id.frame_container, newFragment).commit();
 
                 getSupportActionBar().setTitle(Constants.HOME);
             }
@@ -204,9 +167,9 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
                     checkedMenuItem = item;
                 }
 
-                Fragment newFragment = new AttendanceHistoryFragment(mContext);
-                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                ft.replace(R.id.frame_container, newFragment).commit();
+              //  Fragment newFragment = new AttendanceHistoryFragment(mContext);
+              //  FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+              //  ft.replace(R.id.frame_container, newFragment).commit();
 
                 getSupportActionBar().setTitle(Constants.ATTENDANCE_HISTORY);
             }
@@ -222,9 +185,9 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
                     checkedMenuItem = item;
                 }
 
-                Fragment newFragment = new POEntryListFragment(mContext);
-                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                ft.replace(R.id.frame_container, newFragment).commit();
+            //    Fragment newFragment = new POEntryListFragment(mContext);
+            //    FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+             //   ft.replace(R.id.frame_container, newFragment).commit();
 
                 getSupportActionBar().setTitle(Constants.PO_ENTRY);
             }
@@ -253,7 +216,7 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case Constants.LOGOUT:
-                showLogoutDialog();
+            //    showLogoutDialog();
                 break;
         }
 
@@ -271,7 +234,7 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         return super.onOptionsItemSelected(item);
     }
 
-
+/*
     private void setNavHeaderData() {
         if (!mPrefs.getUserImageLink().isEmpty()) {
             final ImageView ivUserImage = nav_view.getHeaderView(0).findViewById(R.id.ivUserImage);
@@ -294,17 +257,17 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
                     });
         }
         TextView tvUserName = nav_view.getHeaderView(0).findViewById(R.id.tvUserName);
-        tvUserName.setText(mPrefs.getFullUserName());
+     //   tvUserName.setText(mPrefs.getFullUserName());
         TextView tvUserEmail = nav_view.getHeaderView(0).findViewById(R.id.tvUserEmail);
-        tvUserEmail.setText(mPrefs.getUserName());
+      //  tvUserEmail.setText(mPrefs.getUserName());
         switchCheckInCheckOut = nav_view.getHeaderView(0).findViewById(R.id.switchCheckIn);
-        switchCheckInCheckOut.setChecked(mPrefs.getCheckInStatus());
-        switchCheckInCheckOut.setOnClickListener(new View.OnClickListener() {
+      //  switchCheckInCheckOut.setChecked(mPrefs.getCheckInStatus());
+      *//*  switchCheckInCheckOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 prepareCheckInCheckOutProcedure(switchCheckInCheckOut.isChecked());
             }
-        });
+        });*//*
         tvSwitchCheckIn = nav_view.getHeaderView(0).findViewById(R.id.tvSwitchCheckIn);
         if (switchCheckInCheckOut.isChecked())
             tvSwitchCheckIn.setText(R.string.punchout);
@@ -315,7 +278,7 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         tv_version.setText("version " + getAppVersion());
         // Call to check the check-in status
         fetchCheckInCheckOutStatus();
-    }
+    }*/
 
 
     public void setContentLayout(int resId) {
@@ -324,7 +287,7 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
-    private void showLogoutDialog() {
+   /* private void showLogoutDialog() {
         // First check if user has checked-in, then ask to check-out before showLogoutDialog
         if (mPrefs.getCheckInStatus())
             Util.showAlertDialogOk(BaseActivity.this, "Please Check-out first in order to Logout.");
@@ -340,19 +303,19 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
                         @Override
                         public void onCancel() {}
                     });
-    }
+    }*/
 
 
-    public void logout() {
+/*    public void logout() {
         mPrefs.clearUserData();
         Intent intent = new Intent(BaseActivity.this, LoginActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
         finish();
-    }
+    }*/
 
 
-    public void fetchCheckInCheckOutStatus() {
+    /*public void fetchCheckInCheckOutStatus() {
         HashMap<String, Object> paramsMap = new HashMap<>();
         paramsMap.put(WebServiceConstants.PARAM_USER_ID, mPrefs.getUserId());
         paramsMap.put(WebServiceConstants.REQ_PARAM_DEVICE_ID, Util.getMobileDeviceID(mContext));
@@ -400,10 +363,10 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
             public void onError() {
             }
         });
-    }
+    }*/
 
 
-    public void prepareCheckInCheckOutProcedure(final boolean checkIn) {
+  /*  public void prepareCheckInCheckOutProcedure(final boolean checkIn) {
         switchCheckInCheckOut.setChecked(!checkIn);
         if (Util.checkConnectivity(mContext)) {
             if (Util.checkGpsStatus(mContext)) {
@@ -442,9 +405,9 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
                 new GetLocationService().showSettingsAlert(mContext);
         } else
             Util.showAlertDialogOk(mContext, "Please check the internet connection.");
-    }
+    }*/
 
-
+/*
     private void callCheckInAPI() {
         HashMap<String, Object> paramsMap = new HashMap<>();
         paramsMap.put(WebServiceConstants.REQ_PARAM_DEVICE_TYPE, AppConstants.DEVICE_TYPE);
@@ -489,10 +452,10 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
                 Toast.makeText(mContext, "Check-in failed due to Volley error. Try again.", Toast.LENGTH_LONG).show();
             }
         });
-    }
+    }*/
 
 
-    private void callCheckOutAPI() {
+    /*private void callCheckOutAPI() {
         HashMap<String, Object> paramsMap = new HashMap<>();
         paramsMap.put(WebServiceConstants.REQ_PARAM_DEVICE_TYPE, AppConstants.DEVICE_TYPE);
         paramsMap.put(WebServiceConstants.PARAM_USER_ID, mPrefs.getUserId());
@@ -542,10 +505,10 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
                 Toast.makeText(mContext, "Check-out failed due to Volley error. Try again.", Toast.LENGTH_LONG).show();
             }
         });
-    }
+    }*/
 
 
-    private void startAttendanceAfterDayEnd(Context context) {
+ /*   private void startAttendanceAfterDayEnd(Context context) {
         Intent intent = new Intent(context, AttendanceAfterDayEndBroadcastReceiver.class);
         intent.putExtra(WebServiceConstants.PARAM_USER_ID, mPrefs.getUserId());
         // Get a Calendar and set the time to 6:45:00
@@ -566,10 +529,10 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         if (alarmManager != null) {
             alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, alarmStartTime.getTimeInMillis(), Constants.ONE_HOUR_INTERVAL, pendingIntent); // for one hour = 60 min.
         }
-    }
+    }*/
 
 
-    private void stopAttendanceAfterDayEnd(Context context) {
+    /*private void stopAttendanceAfterDayEnd(Context context) {
         AlarmManager alarmManager = (AlarmManager) mContext.getSystemService(ALARM_SERVICE);
         if (alarmManager != null) {
             Intent intentAlarm = new Intent(context, AttendanceAfterDayEndBroadcastReceiver.class);
@@ -596,13 +559,15 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
             PendingIntent pendingIntent = PendingIntent.getService(mContext, Constants.AUTO_ATTENDANCE_ALERT_REQ, intentAlarm, PendingIntent.FLAG_UPDATE_CURRENT);
             alarmManager.cancel(pendingIntent);
         }
-    }
+    }*/
 
+/*
 
     private void updateCurrentFragment() {
         Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.frame_container);
         if (currentFragment != null && currentFragment instanceof BaseFragment)
             ((BaseFragment) currentFragment).onCheckInStatusChange();
     }
+*/
 
 }

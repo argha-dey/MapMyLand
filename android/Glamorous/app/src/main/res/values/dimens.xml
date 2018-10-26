@@ -1,0 +1,10 @@
+<resources>
+
+    <dimen name="switch_track_width">36dp</dimen>
+    <dimen name="switch_track_height">30dp</dimen>
+    <dimen name="switch_thumb_radius">15dp</dimen>
+    <dimen name="switch_radius">50dp</dimen>
+    <dimen name="switch_selector_padding">2dp</dimen>
+    <dimen name="switch_stroke_height">0dp</dimen>
+
+</resources>

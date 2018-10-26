@@ -1,0 +1,23 @@
+{
+  "error_code": 0,
+  "error_message": null,
+  "result": {
+    "band_id": 6,
+    "department_id": 4,
+    "designation_id": 27,
+    "full_name": "Pankaj Kumar Choudhary",
+    "is_core_emp": true,
+    "is_dept_head": false,
+    "is_project_manager": false,
+    "is_reporting_head": false,
+    "msg": "Successfully authenticated.",
+    "photo": "",
+    "po_log_start_date": null,
+    "user_emp_type": 0,
+    "user_id": 10793,
+    "user_name": "pankaj.choudhary@cyber-swift.com",
+    "user_status": true,
+    "work_location": 0
+  },
+  "status": true
+}
